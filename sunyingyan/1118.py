@@ -2,7 +2,7 @@ def bobblesort(a):
     n = len(a)
     j = 0
     while j < n:
-        i = 0
+        i = 0 # interesting way of thinking, counting the number of swaps
         while i < n - j - 1:
             if a[i] > a[i+1]:
                 a[i],a[i+ 1]=a[i + 1],a[i]
@@ -25,14 +25,16 @@ def fanzhuan2(a):
         i += 1
     print(a)
 
+# jiecheng(0) should return 1
 def jiecheng(n):
-    if n == 1:
+    if n == 0:
         return 1
     return n*jiecheng(n - 1)
 
+# 其实这是计算一个数的排列，数字之和是100
 def step(n):#a+2b+3b=100,求abc的解法数量
     if n <= 3:
-        return 7
+        return 7 # 这是错的，n = 1 时，只有一种方法
     return step(n - 1) + step(n - 2) + step(n - 3)
 
 def hanoi(f,t,r,n):#f是from，t是target，r是relay中转，n是盘子的数量
