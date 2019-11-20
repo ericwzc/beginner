@@ -44,6 +44,18 @@ def hanoi(f,t,r,n):#f是from，t是target，r是relay中转，n是盘子的数�
     hanoi(f,r,t,n - 1)#把开始的除了最下面的盘子，借助relay挪到target
     print('{}→{}'.format(f,t))#把from最下面的盘子挪到target
     hanoi(r,t,f,n-1)# 把剩下的上面的盘子（在relay上），挪到target
+ 
+def findn(a,n):
+  i = 0
+  while i < len(a):
+    if a[i] == n:
+      print('{}在数组中的下标是{}'.format(n,i))
+      return 0
+    i += 1
+  print('-1')
 
 if __name__=='__main__':
     hanoi('起始','终点','中转',3)
+    a=[1,2,3,4,5]
+    n=5
+    findn(a,n)
