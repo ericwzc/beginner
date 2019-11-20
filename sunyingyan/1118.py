@@ -54,8 +54,15 @@ def findn(a,n):
     i += 1
   print('-1')
 
+def absort(a,b):
+  c=a+b
+  bobblesort(c)
+  return c
+
 if __name__=='__main__':
     hanoi('起始','终点','中转',3)
-    a=[1,2,3,4,5]
+    a=[1,4,3,2,5]
     n=5
     findn(a,n)
+    b=[9,8]
+    print(absort(a,b))
