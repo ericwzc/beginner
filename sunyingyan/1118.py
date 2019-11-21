@@ -50,11 +50,11 @@ def findn(a,n):
   while i < len(a):
     if a[i] == n:
       print('{}在数组中的下标是{}'.format(n,i))
-      return 0
+      return 0 # why always return 0? return i instead
     i += 1
-  print('-1')
+  print('-1') # return -1, not print -1
 
-def absort(a,b):
+def absort(a,b): # Can you do it by comparing elements one by one from each list, since they are already sorted?
   c=a+b
   bobblesort(c)
   return c
