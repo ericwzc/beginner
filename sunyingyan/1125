@@ -1,0 +1,43 @@
+def gen(min,max):
+    i = 1
+    a = []
+    while i < max:
+        j = 1
+        while j < max:
+            sum = i + j
+            if sum > min and sum < max:
+                a.append('{} + {} = '.format(i,j))
+            j += 1
+        i += 1
+    return a
+
+def rdm(a,n):
+    i = 0
+    z = len(a) - 1
+    b = []
+    while i < n:
+        m = random.randint(0, z+1)
+        a[z], a[m] = a[m], a[z]
+        b.append(a[z])
+        z -= 1
+        i += 1
+    return b
+
+def output(min,max,n,l):
+    a = gen(min,max)
+    print(len(a))
+    rdm(a,n)
+    i = 0
+    while i < n:
+        j = 0
+        while j < l:
+            print('{}   '.format(a[i]),end='')
+            i += 1
+            if i == n:
+                break
+            j += 1
+        print('')
+        j = 0
+
+if __name__ == '__main__':
+    output(1,10,20,3)
